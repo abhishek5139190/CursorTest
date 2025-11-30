@@ -1,0 +1,424 @@
+/* Navigation Component */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    border-top: 1px solid var(--border-gray);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 8px 0;
+    z-index: 1000;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    border: none;
+    background: none;
+    font-size: 12px;
+}
+
+.nav-item.active {
+    color: var(--primary-teal);
+}
+
+.nav-icon {
+    font-size: 20px;
+}
+
+/* Metric Card Component */
+.metric-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.metric-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metric-icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background-color: var(--light-teal);
+    color: var(--primary-teal);
+    font-size: 20px;
+}
+
+.metric-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+.metric-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.metric-progress {
+    width: 100%;
+    height: 6px;
+    background-color: var(--light-gray);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.metric-progress-fill {
+    height: 100%;
+    background-color: var(--primary-teal);
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.metric-status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+
+/* Progress Bar Components */
+.progress-bar-circular {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.progress-bar-circular svg {
+    transform: rotate(-90deg);
+}
+
+.progress-bar-circular .bg {
+    fill: none;
+    stroke: var(--light-gray);
+    stroke-width: 8;
+}
+
+.progress-bar-circular .progress {
+    fill: none;
+    stroke: var(--primary-teal);
+    stroke-width: 8;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.3s ease;
+}
+
+.progress-bar-linear {
+    width: 100%;
+    height: 8px;
+    background-color: var(--light-gray);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-linear-fill {
+    height: 100%;
+    background-color: var(--primary-teal);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* Chart Components */
+.chart-container {
+    width: 100%;
+    margin: 16px 0;
+}
+
+.bar-chart {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    height: 120px;
+    gap: 8px;
+}
+
+.bar {
+    flex: 1;
+    background: linear-gradient(to top, var(--primary-teal), var(--yellow));
+    border-radius: 4px 4px 0 0;
+    min-height: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.bar.highlight {
+    background: linear-gradient(to top, var(--coral-orange), var(--yellow));
+}
+
+.bar-label {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.bar-label.active {
+    color: var(--coral-orange);
+    font-weight: 600;
+}
+
+.line-chart {
+    position: relative;
+    height: 100px;
+    width: 100%;
+}
+
+.line-chart svg {
+    width: 100%;
+    height: 100%;
+}
+
+.line-chart .area {
+    fill: var(--light-teal);
+    opacity: 0.3;
+}
+
+.line-chart .line {
+    fill: none;
+    stroke: var(--primary-teal);
+    stroke-width: 2;
+}
+
+/* Input Components */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 8px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--border-gray);
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--primary-teal);
+}
+
+.slider {
+    width: 100%;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--light-gray);
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary-teal);
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--primary-teal);
+    cursor: pointer;
+    border: none;
+}
+
+/* Toggle Buttons */
+.toggle-group {
+    display: flex;
+    gap: 8px;
+    background: var(--light-gray);
+    padding: 4px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+    background: var(--white);
+    color: var(--primary-teal);
+}
+
+/* Habit Buttons */
+.habit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.habit-button {
+    padding: 16px;
+    border: 2px solid var(--border-gray);
+    border-radius: 12px;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.habit-button.active {
+    border-color: var(--primary-teal);
+    background: var(--light-teal);
+}
+
+.habit-icon {
+    font-size: 24px;
+}
+
+.habit-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-gray);
+}
+
+/* Feeling Selector */
+.feeling-selector {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.feeling-circle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--border-gray);
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.feeling-circle.active {
+    border-color: var(--primary-teal);
+    background: var(--light-teal);
+    color: var(--primary-teal);
+}
+
+/* Trigger Buttons */
+.trigger-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.trigger-button {
+    padding: 10px 16px;
+    border: 2px solid var(--border-gray);
+    border-radius: 20px;
+    background: var(--white);
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.trigger-button.active {
+    border-color: var(--primary-teal);
+    background: var(--primary-teal);
+    color: var(--white);
+}
+
+/* AI Insight Card */
+.ai-insight-card {
+    background: var(--light-teal);
+    border: 2px solid var(--primary-teal);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 16px 0;
+    display: flex;
+    gap: 12px;
+}
+
+.ai-insight-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 20px;
+    color: var(--primary-teal);
+}
+
+.ai-insight-content {
+    flex: 1;
+}
+
+.ai-insight-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--dark-gray);
+    margin-bottom: 8px;
+}
+
+.ai-insight-text {
+    font-size: 14px;
+    color: var(--dark-gray);
+    line-height: 1.5;
+}
+
